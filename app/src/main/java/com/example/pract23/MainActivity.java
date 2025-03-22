@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        MapKitFactory.setApiKey("a4e2c9cf-c919-49c8-b481-bdf431450cb8"); // Замените на ваш Yandex API-ключ
+        MapKitFactory.setApiKey("a4e2c9cf-c919-49c8-b481-bdf431450cb8");
         MapKitFactory.initialize(this);
 
         super.onCreate(savedInstanceState);
@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
                     double longitude = location.getPosition().getLongitude();
                     currentLocation = new Point(latitude, longitude);
 
-                    locationText.setText(String.format("Location: Lat: %.6f, Long: %.6f",
+                    locationText.setText(String.format("Координаты: широта: %.6f, долгота: %.6f",
                             latitude, longitude));
 
                     mapView.getMap().move(
@@ -81,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
                         if (addresses != null && !addresses.isEmpty()) {
                             Address address = addresses.get(0);
                             String addressLine = address.getAddressLine(0);
-                            addressText.setText("Address: " + (addressLine != null ? addressLine : "Unknown"));
+                            addressText.setText("Адрес: " + (addressLine != null ? addressLine : "Unknown"));
                         } else {
                             addressText.setText("Address: Unable to determine");
                         }
